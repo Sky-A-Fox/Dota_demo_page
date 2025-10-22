@@ -1,4 +1,4 @@
-// --- элементы DOM ---
+// --- элементы DOM ---   elements DOM
 const heroGrid = document.getElementById('heroGrid');
 const modal = document.getElementById('heroModal');
 const closeModal = document.getElementById('closeModal');
@@ -8,12 +8,12 @@ const heroAbilitiesEl = document.getElementById('heroAbilities');
 const heroItemsEl = document.getElementById('heroItems');
 const searchInput = document.getElementById('searchInput');
 
-// --- глобальные объекты JSON ---
+// --- глобальные объекты JSON ---   global JSON objects
 let heroAbilitiesMap = {};
 let abilitiesInfo = {};
 let itemsInfo = {};
 
-// --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---
+// --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---   helper functions
 function createAbilityElement(key, info) {
     const displayName = info.dname || formatAbilityName(key);
     const imgUrl = `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/abilities/${key}_md.png`;
@@ -93,7 +93,7 @@ function renderItems(hero) {
     }
 }
 
-// --- ОСНОВНАЯ ЛОГИКА ---
+// --- ОСНОВНАЯ ЛОГИКА ---  main logic
 
 // --- подгрузка abilities + hero->abilities + items ---
 Promise.all([
@@ -114,7 +114,7 @@ Promise.all([
     console.warn('⚠️ Error loading reference JSONs:', err);
 });
 
-// --- получить и отрисовать героев и включить поиск ---
+// --- получить и отрисовать героев и включить поиск ---   fetch heroes and render + enable search
 fetch('https://api.opendota.com/api/heroStats')
     .then(res => {
         if (!res.ok) throw new Error('Failed to load heroes');
@@ -137,7 +137,7 @@ fetch('https://api.opendota.com/api/heroStats')
         heroGrid.innerHTML = 'Error loading heroes: ' + err.message;
     });
 
-// --- render карточек ---
+// --- render карточек ---  render hero cards
 function renderHeroes(list) {
     heroGrid.innerHTML = '';
     list.forEach(hero => {
@@ -153,7 +153,7 @@ function renderHeroes(list) {
     });
 }
 
-// --- показать модалку с данными героя ---
+// --- показать модалку с данными героя ---  show modal with hero data
 function showHero(hero) {
     heroNameEl.textContent = hero.localized_name;
     heroRolesEl.textContent = 'Roles: ' + (hero.roles?.length ? hero.roles.join(', ') : 'N/A');
@@ -178,6 +178,6 @@ function showHero(hero) {
     tryShow();
 }
 
-// --- закрытие модалки ---
+// --- закрытие модалки --- close modal
 closeModal.onclick = () => { modal.style.display = 'none'; };
 window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });

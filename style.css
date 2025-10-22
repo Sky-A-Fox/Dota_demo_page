@@ -120,30 +120,3 @@ h4 {
   border-color: #ffcc00;
   box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
 }
-
-
-.hero-modal {
-  background: #1b1b1b;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-}
-
-.ability-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.ability-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.ability-icon:hover {
-  transform: scale(1.1);
-}
