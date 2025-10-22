@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dota 2 Heroes SPA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Dota 2 Heroes SPA</h1>
+
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search heroes...">
+</div>
+
+<div class="grid" id="heroGrid">Loading heroes...</div>
+
+<div class="modal" id="heroModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2 id="heroName"></h2>
+    <p id="heroRoles"></p>
+    <h4>Abilities:</h4>
+    <div id="heroAbilities"></div>
+    <h4>Popular Items:</h4>
+    <div id="heroItems"></div>
+  </div>
+</div>
+
+<script src="items.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
