@@ -17,7 +17,7 @@ function createAbilityElement(key, info) {
         <div style="display:flex;align-items:center;margin-bottom:8px;">
             <img src="${imgUrl}" 
                  alt="${displayName}" 
-                 style="width:48px;height:48px;margin-right:10px;border-radius:6px;background:#2c2c2c;"
+                 style="width:48px; height:48px; margin-right:10px; border-radius:6px; background:#2c2c2c;"
                  onerror="this.style.display='none'">
             <div>
                 <strong>${displayName}</strong><br>
@@ -31,9 +31,9 @@ function createItemElement(itemKey, itemInfo) {
     return `
         <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/${itemKey}_lg.png" 
              alt="${itemInfo.dname || itemKey}" 
-             style="width:48px;height:48px;border-radius:6px;border:1px solid #ffcc00;"
+             style="width:48px; height:48px; border-radius:6px; border:1px solid #ffcc00;"
              onerror="this.style.display='none'">
-        <div style="font-size:12px;margin-top:4px;">${itemInfo.dname || itemKey}</div>
+        <div style="font-size:12px; margin-top:4px;">${itemInfo.dname || itemKey}</div>
     `;
 }
 
@@ -159,4 +159,5 @@ function renderItems(hero, itemsInfo) {
 
 // --- закрытие модалки --- close modal ---
 closeModal.onclick = () => { modal.style.display = 'none'; };
+
 window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
